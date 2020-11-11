@@ -1,0 +1,20 @@
+{"items":[
+    {
+        "name":"Natalie",
+        "surname":"Portman",
+        "age":39,
+        "height": 1.6,
+        "married": true,
+        "movies": ["Black Swan","Thor","V for Vendetta","The Other Boleyn Girl"]
+        
+    },
+    {
+        "name":"Scarlett",
+        "surname":"Johansson",
+        "age":35,
+        "height": 1.6,
+        "married": false,
+        "movies": ["Black Widow","Lucy","The Avengers","The Other Boleyn Girl"]        
+    }
+]
+}
