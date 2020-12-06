@@ -1,0 +1,130 @@
+{% extends 'main/base.html' %}
+	{% load static %}
+	{% load django_template_maths %}
+	{% block content %}
+	<!-- banner-2 -->
+	<div class="page-head_agile_info_w3l">
+
+	</div>
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="index.html">Home</a>
+						<i>|</i>
+					</li>
+					<li>Product View Page</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+	<!-- Single Page -->
+	<div class="banner-bootom-w3-agileits">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">{{ item.name }}
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+			<!-- //tittle heading -->
+			<div class="col-md-5 single-right-left ">
+				<div class="grid images_3_of_2">
+								<div class="thumb-image">
+												<img src="media/{{ item.item_image }}" width="300" height="300" alt=" ">
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-7 single-right-left simpleCart_shelfItem">
+				<h3>{{ item.name }}</h3>
+			
+				<p>
+					<span class="item_price">${{ item.disc }}</span>
+					<del>${{ item.price }}</del>
+				</p>
+				<div class="single-infoagile">
+					<h4> Description : {{ item.description }} </h4>
+					<br>
+					<h4> Category : {{ item.category }} </h4>
+					<br>
+					<h4> Brand : {{ item.brand }} </h4>
+					<br>
+				</div>
+				
+				<div class="occasion-cart">
+					<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+								<a href="{% url 'add_to_cart' item.id %}"> <button type="button"  class="button" > Add to cart</button> </a>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //Single Page -->
+	<!-- special offers -->
+	<div class="featured-section" id="projects">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Add More
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+			<!-- //tittle heading -->
+			<div class="content-bottom-in">
+				<ul id="flexiselDemo1">
+					{% for i in '012'|make_list %}
+					<li>
+						<div class="w3l-specilamk">
+							<div class="speioffer-agile">
+								<a href="single.html">
+									<img src="images/s1.jpg" alt="">
+								</a>
+							</div>
+							<div class="product-name-w3l">
+								<h4>
+									<a href="single.html">Aashirvaad, 5g</a>
+								</h4>
+								<div class="w3l-pricehkj">
+									<h6>$220.00</h6>
+									<p>Save $40.00</p>
+								</div>
+								<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+									<form action="#" method="post">
+										<fieldset>
+											<input type="hidden" name="cmd" value="_cart" />
+											<input type="hidden" name="add" value="1" />
+											<input type="hidden" name="business" value=" " />
+											<input type="hidden" name="item_name" value="Aashirvaad, 5g" />
+											<input type="hidden" name="amount" value="220.00" />
+											<input type="hidden" name="discount_amount" value="1.00" />
+											<input type="hidden" name="currency_code" value="USD" />
+											<input type="hidden" name="return" value=" " />
+											<input type="hidden" name="cancel_return" value=" " />
+											<input type="submit" name="submit" value="Add to cart" class="button" />
+										</fieldset>
+									</form>
+								</div>
+							</div>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //special offers -->
+
+	<!-- newsletter -->
+{% endblock content %}

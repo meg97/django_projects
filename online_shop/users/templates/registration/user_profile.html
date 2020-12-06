@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+	{% block content %}
+	<div class="profile">
+	<h3>Profile</h3>
+		<br>
+		<image src="{{profile.user_image.url}}" alt="asdsa" height="150"width="150">
+		<br>
+		<br>
+			<strong>Name: {{profile.user.username}}</strong>
+		<br>
+			<strong>Age: {{profile.age}}</strong>
+		<br>
+			<strong>Adress: {{profile.adress}}</strong>
+		<br>
+		<br>
+		<br>
+		<div class="item-row">
+				<a href="{% url 'profile_update' %}"><button class="btn btn-success" type="submit" name="Update Profile">Update Profile</button></a>
+		<br>
+		<br>
+		<br>
+		<br>
+		</div>
+
+	</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+	{% block content %}
+
+	<div class="Item">
+	<h3>Items</h3>
+		<strong>{{item.id}}</strong>
+		<br>
+		<br>
+		{{item.description}}
+		<br>
+				
+
+	<a class="btn btn-sm btn-info" href="{% url 'task_update' item.id %}">Update</a>
+		<a class="btn btn-sm btn-danger" href="{% url 'task_delete' item.id %}">Delete</a>
+
+
+
+	</div>
+
+{% endblock %}

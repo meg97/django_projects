@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %}
+	{% load static %}
+	{% block content %}
+
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="index">Home</a>
+						<i>|</i>
+					</li>
+					<li>About Us</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+	<!-- about page -->
+	<!-- welcome -->
+	<div class="welcome">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Welcome to our Site
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+			<!-- //tittle heading -->
+			<div class="w3l-welcome-info">
+				<div class="col-sm-6 col-xs-6 welcome-grids">
+					<div class="welcome-img">
+						<img src="{% static '/main/images/about.jpg' %}" class="img-responsive zoom-img" alt="">
+					</div>
+				</div>
+				<div class="col-sm-6 col-xs-6 welcome-grids">
+					<div class="welcome-img">
+						<img src="{% static '/main/images/about2.jpg' %}" class="img-responsive zoom-img" alt="">
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="w3l-welcome-text">
+				<p>Welcome to our online store! Our team is proud to announce that we're now open for business, and we look forward to serving you all in the future. If you have any questions about this store or the products found within, please don't hesitate to contact us any time.
+Our website has been carefully designed to provide you with an amazingly flexible online shopping experience, and its ease of navigation is something we think you'll grow to depend on and appreciate. Feel free to browse our entire product catalog, and let us know if you have any questions, comments or concerns about the items housed within. Our team is always ready and willing to assist our customers, and we are happy for your visit.  </p>
+			</div>
+		</div>
+	</div>
+	<!-- //welcome -->
+	<!-- video -->
+	<div class="about">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Our Video
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+			<!-- //tittle heading -->
+			<div class="about-tp">
+				<div class="col-md-8 about-agileits-w3layouts-left">
+					<iframe width="830" height="450" src="https://www.youtube.com/embed/28H9RTlmUZM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div class="col-md-4 about-agileits-w3layouts-right">
+					<div class="img-video-about">
+						<img src="{% static '/main/images/videoimg2.png' %}" alt="">
+					</div>
+					<h4>Grocery Shoppy</h4>
+					<p>No.1 online shop in Armenia with over 70 million Products and 10 million users </p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //video-->
+	<!-- //about page -->
+	<!-- newsletter -->
+{% endblock content %}

@@ -1,0 +1,157 @@
+{% extends 'main/base.html' %}
+	{% load static %}
+	{% load django_template_maths %}
+	{% block content %}
+	<!-- //navigation -->
+	<!-- banner-2 -->
+	<div class="page-head_agile_info_w3l">
+
+	</div>
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="index.html">Home</a>
+						<i>|</i>
+					</li>
+					<li>Checkout</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+	<!-- checkout page -->
+	<div class="privacy">
+		<div class="container">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l">Checkout
+				<span class="heading-style">
+					<i></i>
+					<i></i>
+					<i></i>
+				</span>
+			</h3>
+			
+		
+			<!-- //tittle heading -->
+			<div class="checkout-right">
+				<h4>Your shopping cart contains:
+					
+				</h4>
+				<div class="table-responsive">
+					<table class="timetable_sub">
+						<thead>
+							<tr>
+								
+								<th>Product</th>
+								<th>Quantity</th>
+								<th>Product Name</th>
+
+								<th>Price</th>
+								<th>Total Amount</th>
+								<th>Remove</th>
+							</tr>
+						</thead>
+
+						<tbody>
+						
+						{% for order in order_.items.all %}
+						
+		
+		
+		
+							<tr class="rem1">
+								
+								<td class="invert-image">
+									<a href="{% url 'product_view' order.order_item.id %}">
+										<img src="media/{{ order.order_item.item_image }}" alt=" " class="img-responsive">
+									</a>
+								</td>
+								<td class="invert">
+									<div class="quantity">
+										<div class="quantity-select">
+											<div class="entry value-minus"> <a href="{% url 'minus' order.order_item.id %}"> &nbsp; </a>
+												
+											</div>
+											<div class="entry value">
+												<span>{{order.quantity}}</span>
+											</div>
+											<div class="entry value-plus active"> <a href="{% url 'plus' order.order_item.id %}"> &nbsp;</a>
+											</div>
+
+										</div>
+									</div>
+								</td>
+								<td class="invert">{{ order.order_item.name }}</td>
+								<td class="invert">{{ order.order_item.disc }}</td>
+								<td class="invert">{{ order.get_item_total_price }}</td>
+								<td class="invert"><a href="{% url 'remove' order.order_item.id %}">
+									<div class="rem">
+										<div class="close1"> </div>
+									</div>
+								</td>
+							</tr>
+							
+							{% endfor %}
+							<tr>
+								<td ><b>Total</b></td>
+							
+								<td colspan="4"> ${{order_.get_cart_total}}</td>
+							</tr>
+						</tbody>
+						
+					</table>
+				</div>
+			</div>
+			<div class="checkout-left">
+				<div class="address_form_agile">
+					<h4>Add a new Details</h4>
+					<form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+						{% csrf_token %}
+						<div class="creditly-wrapper wthree, w3_agileits_wrapper">
+							<div class="information-wrapper">
+								<div class="first-row">
+									<div class="controls">
+										<input class="billing-address-name" type="text" name="name" placeholder="Full Name" required="">
+									</div>
+									<div class="w3_agileits_card_number_grids">
+										<div class="w3_agileits_card_number_grid_left">
+											<div class="controls">
+												<input type="text" placeholder="Mobile Number" name="number" required="">
+											</div>
+										</div>
+										<div class="w3_agileits_card_number_grid_right">
+											<div class="controls">
+												<input type="text" placeholder="Landmark" name="landmark" required="">
+											</div>
+										</div>
+										<div class="clear"> </div>
+									</div>
+									<div class="controls">
+										<input type="text" placeholder="Town/City" name="city" required="">
+									</div>
+									<div class="controls">
+										<select class="option-w3ls">
+											<option>Select Address type</option>
+											<option>Office</option>
+											<option>Home</option>
+											<option>Commercial</option>
+
+										</select>
+									</div>
+								</div>
+								<button class="submit check_out">Delivery to this Address</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //checkout page -->
+	<!-- newsletter -->
+{% endblock content %}
